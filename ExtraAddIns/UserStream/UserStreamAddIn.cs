@@ -31,6 +31,7 @@ namespace Misuzilla.Applications.TwitterIrcGateway.AddIns.UserStream
             // XXX:
             ServicePointManager.DefaultConnectionLimit = 1000;
             ServicePointManager.MaxServicePoints = 0;
+            ServicePointManager.SecurityProtocol = (SecurityProtocolType)(0xc0 | 0x300 | 0xc00);
 
             CurrentSession.AddInsLoadCompleted += (sender, e) =>
             {

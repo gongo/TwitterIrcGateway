@@ -107,6 +107,8 @@ namespace Misuzilla.Applications.TwitterIrcGateway
             OAuthSecretKey = "74K9CwKANFVLVupHMtHy4fJ3TjAJq58CvxxtAQjoI";
 
             ServicePointManager.DefaultConnectionLimit = 1000;
+            ServicePointManager.SecurityProtocol = (SecurityProtocolType)(0xc0 | 0x300 | 0xc00);
+
             Authentication = new OAuthAuthentication();
             IsSslConnection = useSslConnection;
         }

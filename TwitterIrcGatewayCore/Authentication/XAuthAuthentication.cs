@@ -34,6 +34,7 @@ namespace Misuzilla.Applications.TwitterIrcGateway.Authentication
                 // xAuth
                 // TODO: Monoの時だけ特別扱いする
                 ServicePointManager.ServerCertificateValidationCallback += delegate { return true; };
+                ServicePointManager.SecurityProtocol = (SecurityProtocolType)(0xc0 | 0x300 | 0xc00);
                 TwitterOAuth twitterOAuth = new TwitterOAuth(server.OAuthClientKey, server.OAuthSecretKey);
                 twitterIdentity = twitterOAuth.RequestAccessToken("", "",
                                                                     new Dictionary<string, string>
